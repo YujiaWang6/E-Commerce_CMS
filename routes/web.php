@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ConsoleController;
 use App\Http\Controllers\BrandsController;
+use App\Http\Controllers\CategoriesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,3 +32,10 @@ Route::get('/console/brands/add', [BrandsController::class, 'addForm'])->middlew
 Route::post('/console/brands/add', [BrandsController::class, 'add'])->middleware('auth');
 Route::get('/console/brands/edit/{brand:id}', [BrandsController::class, 'editForm'])->where('brand','[0-9]+')->middleware('auth');
 Route::post('/console/brands/edit/{brand:id}', [BrandsController::class, 'edit'])->where('brand', '[0-9]+')->middleware('auth');
+
+Route::get('/console/categories/list', [CategoriesController::class, 'list'])->middleware('auth');
+Route::get('/console/categories/delete/{category:id}', [CategoriesController::class, 'delete'])->where('category','[0-9]+')->middleware('auth');
+Route::get('/console/categories/add', [CategoriesController::class, 'addForm'])->middleware('auth');
+Route::post('/console/categories/add', [CategoriesController::class, 'add'])->middleware('auth');
+Route::get('/console/categories/edit/{category:id}', [CategoriesController::class, 'editForm'])->where('category','[0-9]+')->middleware('auth');
+Route::post('/console/categories/edit/{category:id}', [CategoriesController::class, 'edit'])->where('category', '[0-9]+')->middleware('auth');
