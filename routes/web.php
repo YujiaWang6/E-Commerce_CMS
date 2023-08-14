@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConsoleController;
 use App\Http\Controllers\BrandsController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\ProductsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,3 +40,6 @@ Route::get('/console/categories/add', [CategoriesController::class, 'addForm'])-
 Route::post('/console/categories/add', [CategoriesController::class, 'add'])->middleware('auth');
 Route::get('/console/categories/edit/{category:id}', [CategoriesController::class, 'editForm'])->where('category','[0-9]+')->middleware('auth');
 Route::post('/console/categories/edit/{category:id}', [CategoriesController::class, 'edit'])->where('category', '[0-9]+')->middleware('auth');
+
+Route::get('/console/products/list', [ProductsController::class, 'list'])->middleware('auth');
+Route::get('/console/products/delete/{product:id}', [ProductsController::class, 'delete'])->where('product','[0-9]+')->middleware('auth');
