@@ -50,7 +50,7 @@
             <?php foreach($products as $product):?>
                 <tr>
                     <!--Get the stored img link and display-->
-                    <td><a href="<?= $product->url ?>"><img src="<?= $product->image ?>" width="200"></a></td>
+                    <td><a href="<?= $product->url ?>" target="_blank"><img src="<?= $product->image ?>" width="200"></a></td>
                     <td><?= $product->productName ?></td>
                     <td><?= $product->description ?></td>
                     <td><?= $product->price ?></td>
