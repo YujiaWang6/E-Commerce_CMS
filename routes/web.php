@@ -44,4 +44,9 @@ Route::get('/console/categories/edit/{category:id}', [CategoriesController::clas
 Route::post('/console/categories/edit/{category:id}', [CategoriesController::class, 'edit'])->where('category', '[0-9]+')->middleware('auth');
 
 Route::get('/console/products/list', [ProductsController::class, 'list'])->middleware('auth');
-Route::get('/console/products/delete/{product:id}', [ProductsController::class, 'delete'])->where('product','[0-9]+')->middleware('auth');
+Route::get('/console/products/delete/{product:id}', [ProductsController::class, 'deleteConfirm'])->where('product','[0-9]+')->middleware('auth');
+Route::post('/console/products/deleted/{product:id}', [ProductsController::class, 'deleted'])->where('product','[0-9]+')->middleware('auth');
+Route::get('/console/products/add', [ProductsController::class, 'addForm'])->middleware('auth');
+Route::post('/console/products/add', [ProductsController::class, 'add'])->middleware('auth');
+Route::get('/console/products/edit/{product:id}', [ProductsController::class, 'editForm'])->where('product','[0-9]+')->middleware('auth');
+Route::post('/console/products/edit/{product:id}', [ProductsController::class, 'edit'])->where('product','[0-9]+')->middleware('auth');
