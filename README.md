@@ -88,5 +88,12 @@ This repository contains a PHP Laravel project that serves as a content manageme
     http://localhost:8888/phpMyAdmin
    ```
 
-   navigate into ```user``` table inside the database you just created. Copy the ```email``` from one line which is the login email. The ```password``` is encrypted. you can just type ```password``` for ```password```. Then, you are logged in! 
+   Navigate into ```user``` table inside the database you just created. Copy the ```email``` from one line which is the login email. The ```password``` is encrypted. you can just type ```password``` for ```password```. 
+   
+   Go back to the main page:
+   ```
+    http://localhost:8888/
+   ```
+
+    Click the Green button to the login page and enter the email and password. Then, you are logged in! 
 
