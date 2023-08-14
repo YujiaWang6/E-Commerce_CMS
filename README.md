@@ -4,7 +4,7 @@ Welcome to the E-Commerce CMS project, a content management system(CMS) built us
  
 This system is hosted on AWS on:
 
-[http://13.59.213.85/](http://13.59.213.85/){:target="_blank" rel="noopener"}
+[http://13.59.213.85/](http://13.59.213.85/ {:target="_blank" rel="noopener"})
 
 
 The sample email address and password to log in are:
