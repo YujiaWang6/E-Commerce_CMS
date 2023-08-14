@@ -28,7 +28,8 @@ Route::post('/console/login', [ConsoleController::class, 'login'])->middleware('
 Route::get('/console/logout', [ConsoleController::class, 'logout'])->middleware('auth');
 
 Route::get('/console/brands/list', [BrandsController::class, 'list'])->middleware('auth');
-Route::get('/console/brands/delete/{brand:id}', [BrandsController::class, 'delete'])->where('brand','[0-9]+')->middleware('auth');
+Route::get('/console/brands/delete/{brand:id}', [BrandsController::class, 'deleteConfirm'])->where('brand','[0-9]+')->middleware('auth');
+Route::post('/console/brands/deleted/{brand:id}', [BrandsController::class, 'deleted'])->where('brand','[0-9]+')->middleware('auth');
 Route::get('/console/brands/add', [BrandsController::class, 'addForm'])->middleware('auth');
 Route::post('/console/brands/add', [BrandsController::class, 'add'])->middleware('auth');
 Route::get('/console/brands/edit/{brand:id}', [BrandsController::class, 'editForm'])->where('brand','[0-9]+')->middleware('auth');

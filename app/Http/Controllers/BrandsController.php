@@ -14,10 +14,16 @@ class BrandsController extends Controller
         ]);
     }
 
-    public function delete(Brand $brand){
+    public function deleteConfirm(Brand $brand){
+        return view('brands.delete',[
+            'brand' => $brand
+        ]);
+    }
+
+    public function deleted(Brand $brand){
         $brand->delete();
         return redirect('/console/brands/list')
-            ->with('message', $brand->brandName.'has been delete');
+            ->with('message', $brand->brandName.' has been deleted');
     }
 
     public function addForm(){

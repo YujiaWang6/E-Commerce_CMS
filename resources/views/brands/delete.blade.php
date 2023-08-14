@@ -33,26 +33,12 @@
     <?php endif;?>
 
     <section class="w3-padding">
-            <h2>Manage Brands</h2>
-            <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
-                <tr class="w3-red">
-                    <th></th>
-                    <th>Brand Name</th>
-                    <th></th>
-                    <th></th>
-                </tr>
+            <h2>Brand Delete Confirm: <?= $brand->brandName ?></h2>
+            <form method="post" action="/console/brands/deleted/<?= $brand->id ?>" novalidate>
+                <?= csrf_field() ?>
+                <button type="submit">Confirm</button>
 
-                <?php foreach($brands as $key => $value):?>
-                    <tr>
-                        <td><?= $value->id ?></td>
-                        <td><?= $value->brandName ?></td>
-                        <td><a href="/console/brands/edit/<?= $value->id ?>">Edit</a></td>
-                        <td><a href="/console/brands/delete/<?= $value->id ?>">Delete</a></td>
-                    </tr>
-                <?php endforeach; ?>
-            </table>
-
-            <a href="/console/brands/add" class="w3-button w3-green">New Brand</a>
+            </form>
 
     </section>
     
