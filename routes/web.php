@@ -23,7 +23,7 @@ Route::get('/', function () {
 
 
 Route::get('/console/dashboard', [ConsoleController::class, 'dashboard'])->middleware('auth');
-Route::get('/console/login', [ConsoleController::class, 'loginForm'])->middleware('guest')->name('login');
+Route::get('/console/login', [ConsoleController::class, 'loginForm']);
 Route::post('/console/login', [ConsoleController::class, 'login'])->middleware('guest');
 Route::get('/console/logout', [ConsoleController::class, 'logout'])->middleware('auth');
 
