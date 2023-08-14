@@ -1,66 +1,92 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# E-Commerce CMS - PHP Laravel Project
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Welcome to the E-Commerce CMS project, a content management system(CMS) built using the Laravel framework for managing an E-Commerce store's brands, categories, and products.
 
-## About Laravel
+This system is hosted on AWS on: 
+```
+ http://13.59.213.85/ 
+```
+The sample email address and password to log in are:
+Email: ```larkin.beulah@example.com```
+Password: ```password``` 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Feel free to try it on your own!
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Table of Contents
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
 
-## Learning Laravel
+## Introduction
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+This repository contains a PHP Laravel project that serves as a content management system (CMS) for an E-Commerce store. It empowers authenticated users to perform CRUD (Create, Read, Update, Delete) operations on brands, categories, and products, enabling efficient management of the store's content.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- User Authentication: Secure user authentication system is in place to ensure only authorized users can access and manage the content.
+- Brands Management: Add, edit, view, and delete different brands for products.
+- Categories Management: Manage product categories with ease, including creation, editing, and deletion.
+- Products Management: Full CRUD functionality for products, allowing easy addition, updating, and removal.
+- Responsive Design: The user interface is designed to be responsive, ensuring a consistent experience across devices.
+- User-Friendly Interface: Intuitive and user-friendly interface for seamless navigation and content management.
 
-## Laravel Sponsors
+## Installation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+1. Clone the repository from GitHub:
+   ```
+   git clone https://github.com/YujiaWang6/E-Commerce_CMS.git
+   ```
+2. Change directory to the project folder:
+   ```
+   cd E-Commerce_CMS
+   ```
+3. Update composer:
+   ```
+   composer update
+   ```
+4. We need to setup the database connection 
+    
+    Before we use MAMP and phpMyAdmin to create a new database, look at the ```.env``` file first:
+   ```
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=Assignment3
+    DB_USERNAME=root
+    DB_PASSWORD=root
+    DB_SOCKET=/var/run/mysqld/mysqld.sock
+   ```
+    The above are the current setting, make sure to change the DB_SOCKET to the path below:
+   ```
+    DB_SOCKET=/Applications/MAMP/tmp/mysql/mysql.sock
+   ```
 
-### Premium Partners
+   By using the MAMP, make sure to change the MAMP preferences to set the document root to the ```public``` folder in your ```E-Commerce_CMS``` folder. After changing the root, restart the MAMP. Now you can go to the home page on
+   ```
+    http://localhost:8888/
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+   Now, we are going to set up the database. Go to the website below to create a database matching the database name in the .env file (if you haven't change the value of DB_DATABASE, to create a new database named ```Assignment3``` )
+   ```
+   http://localhost:8888/phpMyAdmin
+   ```
 
-## Contributing
+5. update your ```.env``` file to use the ```public``` file system:
+   ```
+   FILESYSTEM_DISK=public
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+6. Run the following command to create the required tables and seed them with testing data:
+   ```
+    php artisan migrate:refresh --seed
+   ```
 
-## Code of Conduct
+7. Now you can go to your database to check the generated username and password to start using this CMS. 
+    Go to:
+   ```
+    http://localhost:8888/phpMyAdmin
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+   navigate into ```user``` table inside the database you just created. Copy the ```email``` from one line which is the login email. The ```password``` is encrypted. you can just type ```password``` for ```password```. Then, you are logged in! 
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
