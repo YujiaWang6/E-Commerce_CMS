@@ -29,7 +29,6 @@
             <li><a href="/console/products/list">Manage Products</a></li>
             <li><a href="/console/brands/list">Manage Brands</a></li>
             <li><a href="/console/categories/list">Manage Categories</a></li>
-            <li><a href="/console/users/list">Manage Users</a></li>
         </ul>
     </section>
     
