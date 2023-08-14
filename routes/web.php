@@ -36,7 +36,8 @@ Route::get('/console/brands/edit/{brand:id}', [BrandsController::class, 'editFor
 Route::post('/console/brands/edit/{brand:id}', [BrandsController::class, 'edit'])->where('brand', '[0-9]+')->middleware('auth');
 
 Route::get('/console/categories/list', [CategoriesController::class, 'list'])->middleware('auth');
-Route::get('/console/categories/delete/{category:id}', [CategoriesController::class, 'delete'])->where('category','[0-9]+')->middleware('auth');
+Route::get('/console/categories/delete/{category:id}', [CategoriesController::class, 'deleteConfirm'])->where('category','[0-9]+')->middleware('auth');
+Route::post('/console/categories/deleted/{category:id}', [CategoriesController::class, 'deleted'])->where('category','[0-9]+')->middleware('auth');
 Route::get('/console/categories/add', [CategoriesController::class, 'addForm'])->middleware('auth');
 Route::post('/console/categories/add', [CategoriesController::class, 'add'])->middleware('auth');
 Route::get('/console/categories/edit/{category:id}', [CategoriesController::class, 'editForm'])->where('category','[0-9]+')->middleware('auth');

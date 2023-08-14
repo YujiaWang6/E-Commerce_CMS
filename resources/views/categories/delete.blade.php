@@ -33,11 +33,11 @@
     <?php endif;?>
 
     <section class="w3-padding">
-            <h2>Brand Delete Confirm: <?= $brand->brandName ?></h2>
-            <form method="post" action="/console/brands/deleted/<?= $brand->id ?>" novalidate>
+            <h2>Category Delete Confirm: <?= $category->categoryName ?></h2>
+            <form method="post" action="/console/categories/deleted/<?= $category->id ?>" novalidate>
                 <?= csrf_field() ?>
                 <button type="submit" class="w3-button w3-red">Confirm</button>
-                <a href="/console/brands/list" class="w3-button w3-gray">Back to the Brand list</a>
+                <a href="/console/categories/list" class="w3-button w3-gray">Back to the Category list</a>
 
             </form>
 

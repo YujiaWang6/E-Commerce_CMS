@@ -15,7 +15,13 @@ class CategoriesController extends Controller
         ]);
     }
 
-    public function delete(Category $category){
+    public function deleteConfirm(Category $category){
+        return view('categories.delete',[
+            'category'=>$category
+        ]);
+    }
+
+    public function deleted(Category $category){
         $category->delete();
         return redirect('/console/categories/list')
             ->with('message', $category->categoryName . ' has been deleted');
