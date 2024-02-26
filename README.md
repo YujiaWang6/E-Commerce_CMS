@@ -2,16 +2,7 @@
 
 Welcome to the E-Commerce CMS project, a content management system(CMS) built using the Laravel framework for managing an E-Commerce store's brands, categories, and products.
  
-This system is hosted on AWS at:
-
-[http://13.59.213.85/](http://13.59.213.85/)
-
-
-The sample email address and password to log in are:
-Email: ```larkin.beulah@example.com```
-Password: ```password``` 
-
-Feel free to try it on your own!
+Feel free to install it and try it on your own!
 
 ## Table of Contents
 
